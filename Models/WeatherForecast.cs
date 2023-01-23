@@ -1,12 +1,10 @@
-﻿namespace ProductionReady_01;
+﻿namespace ProductionRead_02;
 
 public class WeatherForecast
 {
     public DateOnly Date { get; set; }
 
-    public int TemperatureC { get; set; }
-
-    public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+    public int Temperature { get; set; }
 
     public string? Summary { get; set; }
 }
