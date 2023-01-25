@@ -577,6 +577,7 @@ function fetchWeather() {
                 changeWeather(element);
                 $("#temperature").html(`${data.temperature}<span>C</span>`)
                 date.text(new Date(data.date).toDateString())
+                error.text("")
             } else {
                 error.text(data.error)
             }
@@ -584,5 +585,5 @@ function fetchWeather() {
     })
 }
 
-//fetchWeather()
+fetchWeather()
 setInterval(fetchWeather, 5000);
