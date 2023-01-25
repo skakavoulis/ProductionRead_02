@@ -6,6 +6,7 @@ var outerSVG = Snap('#outer');
 var backSVG = Snap('#back');
 var summary = $('#summary');
 var date = $('#date');
+var error = $('#error')
 var weatherContainer1 = Snap.select('#layer1');
 var weatherContainer2 = Snap.select('#layer2');
 var weatherContainer3 = Snap.select('#layer3');
@@ -575,11 +576,13 @@ function fetchWeather() {
                 const element = weather.find(w => w.type === data.summary);
                 changeWeather(element);
                 $("#temperature").html(`${data.temperature}<span>C</span>`)
+                date.text(new Date(data.date).toDateString())
             } else {
-                alert("NO")
+                error.text(data.error)
             }
         })
     })
 }
 
+//fetchWeather()
 setInterval(fetchWeather, 5000);
